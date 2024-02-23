@@ -1,6 +1,18 @@
 {
   "menu": [
     {
+      "menuHeader": "LSANK DASHBOARD"
+    },
+    {
+      "url": "/",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons ti ti-smart-home",
+      "slug": "dashboard"
+    },
+    {
+      "menuHeader": "TEMPLATE"
+    },
+    {
       "name": "Dashboards",
       "icon": "menu-icon tf-icons ti ti-smart-home",
       "slug": "dashboard",
@@ -10,7 +22,7 @@
       ],
       "submenu": [
         {
-          "url": "/",
+          "url": "/analytics",
           "name": "Analytics",
           "slug": "dashboard-analytics"
         },
