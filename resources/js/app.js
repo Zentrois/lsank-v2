@@ -6,6 +6,3 @@ import.meta.glob([
   // '../assets/json/**',
   '../assets/vendor/fonts/**'
 ]);
-
-import 'bootstrap';
-import '../css/app.css'; 
