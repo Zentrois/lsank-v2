@@ -160,6 +160,11 @@ use App\Http\Controllers\charts\ApexCharts;
 use App\Http\Controllers\charts\ChartJs;
 use App\Http\Controllers\maps\Leaflet;
 
+use App\Http\Controllers\permohonan\PermohonanPengabstrakanAirController;
+use App\Http\Controllers\permohonan\PermohonanBadanPerairanController;
+use App\Http\Controllers\permohonan\PermohonanPelepasanEfluenController;
+
+
 
 // Main Page Route
 Route::get('/dashboard/analytics', [Analytics::class, 'index'])->name('dashboard-analytics');
@@ -365,4 +370,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/permohonan/pengabstrakan-air', [PermohonanPengabstrakanAirController::class, 'index'])->name('permohonan-pengabstrakan-air');
+    Route::get('/permohonan/badan-perairan', [PermohonanBadanPerairanController::class, 'index'])->name('permohonan-badan-perairan');
+    Route::get('/permohonan/pelepasan-efluen', [PermohonanPelepasanEfluenController::class, 'index'])->name('permohonan-pelepasan-efluen');
 });

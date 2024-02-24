@@ -10,28 +10,6 @@
       "slug": "dashboard"
     },
     {
-      "name": "Permohonan",
-      "icon": "menu-icon tf-icons ti ti-files",
-      "slug": "permohonan",
-      "submenu": [
-        {
-          "url": "/permohonan/pengabstrakan-air",
-          "name": "Pengabstrakan Air",
-          "slug": "permohonan-pengabstrakan-air"
-        },
-        {
-          "url": "/permohonan/badan-perairan",
-          "name": "Badan Perairan",
-          "slug": "permohonan-badan-perairan"
-        },
-        {
-          "url": "/permohonan/pelepasan-efluen",
-          "name": "Pelepasan Efluean",
-          "slug": "permohonan-pelepasan-efluen"
-        }
-      ]
-    },
-    {
       "menuHeader": "TEMPLATE"
     },
     {
