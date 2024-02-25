@@ -4,7 +4,7 @@ $configData = Helper::appClasses();
 
 @extends('layouts/layoutMaster')
 
-@section('title', 'Pricing - Pages')
+@section('title', 'Permohonan - Badan Perairan')
 
 <!-- Page Styles -->
 @section('page-style')

@@ -10,4 +10,8 @@ class PermohonanPelepasanEfluenController extends Controller
     public function index(){
         return view('content.permohonan.permohonan-pelepasan-efluen');
     }
+
+    public function create(){
+        return view('content.permohonan.permohonan-pelepasan-efluen-borang');
+    }
 }

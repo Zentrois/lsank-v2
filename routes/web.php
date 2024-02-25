@@ -370,7 +370,15 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    // PermohonanPengabstrakanAirController
     Route::get('/permohonan/pengabstrakan-air', [PermohonanPengabstrakanAirController::class, 'index'])->name('permohonan-pengabstrakan-air');
+
+    // PermohonanBadanPerairanController
     Route::get('/permohonan/badan-perairan', [PermohonanBadanPerairanController::class, 'index'])->name('permohonan-badan-perairan');
+
+    // PermohonanPelepasanEfluenController
     Route::get('/permohonan/pelepasan-efluen', [PermohonanPelepasanEfluenController::class, 'index'])->name('permohonan-pelepasan-efluen');
+    Route::get('/permohonan/pelepasan-efluen/borang-individu', [PermohonanPelepasanEfluenController::class, 'create'])->name('permohonan-pelepasan-efluen-borang-individu');
+    Route::get('/permohonan/pelepasan-efluen/borang-bisnes', [PermohonanPelepasanEfluenController::class, 'create'])->name('permohonan-pelepasan-efluen-borang-bisnes');
 });
