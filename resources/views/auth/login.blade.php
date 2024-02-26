@@ -35,8 +35,9 @@ $configData = Helper::appClasses();
           </a>
         </div>
         <!-- /Logo -->
-        <h3 class="mb-1">Welcome to {{config('variables.templateName')}}! 👋</h3>
-        <p class="mb-4">Please sign-in to your account and start the adventure</p>
+        <h3 class="mb-1">Selamat Datang Ke Lembaga Sumber Air Negeri Kedah
+        </h3>
+        <p class="mb-4">Sila Daftar akaun anda untuk urus lesen anda dengan lebih efisen</p>
 
         @if (session('status'))
         <div class="alert alert-success mb-1 rounded-0" role="alert">
@@ -49,8 +50,8 @@ $configData = Helper::appClasses();
         <form id="formAuthentication" class="mb-3" action="{{ route('login') }}" method="POST">
           @csrf
           <div class="mb-3">
-            <label for="login-email" class="form-label">Email</label>
-            <input type="text" class="form-control @error('email') is-invalid @enderror" id="login-email" name="email" placeholder="john@example.com" autofocus value="{{ old('email') }}">
+            <label for="login-email" class="form-label">Emel</label>
+            <input type="text" class="form-control @error('email') is-invalid @enderror" id="login-email" name="email" placeholder="" autofocus value="{{ old('email') }}">
             @error('email')
             <span class="invalid-feedback" role="alert">
               <span class="fw-medium">{{ $message }}</span>
@@ -59,7 +60,7 @@ $configData = Helper::appClasses();
           </div>
           <div class="mb-3 form-password-toggle">
             <div class="d-flex justify-content-between">
-              <label class="form-label" for="login-password">Password</label>
+              <label class="form-label" for="login-password">Kata Laluan</label>
               @if (Route::has('password.request'))
               <a href="{{ route('password.request') }}">
                 <small>Forgot Password?</small>

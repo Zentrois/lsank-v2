@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Borang extends Model
 {
     use HasFactory;
+
+    protected $table = 'borang'; 
 }

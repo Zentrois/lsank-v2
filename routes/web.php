@@ -381,4 +381,5 @@ Route::middleware([
     Route::get('/permohonan/pelepasan-efluen', [PermohonanPelepasanEfluenController::class, 'index'])->name('permohonan-pelepasan-efluen');
     Route::get('/permohonan/pelepasan-efluen/borang-individu', [PermohonanPelepasanEfluenController::class, 'create'])->name('permohonan-pelepasan-efluen-borang-individu');
     Route::get('/permohonan/pelepasan-efluen/borang-bisnes', [PermohonanPelepasanEfluenController::class, 'create'])->name('permohonan-pelepasan-efluen-borang-bisnes');
+    Route::post('/permohonan/pelepasan-efluen', [PermohonanPelepasanEfluenController::class, 'store'])->name('permohonan-pelepasan-efluen-store');
 });
