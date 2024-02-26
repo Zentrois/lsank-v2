@@ -30,8 +30,8 @@
     },
     bar: {
       series1: config.colors.primary,
-      series2: '#7367F0CC',
-      series3: '#7367f099'
+      series2: '#1E55FFCC',
+      series3: '#1E55FF99'
     }
   };
 

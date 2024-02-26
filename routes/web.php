@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\laravel_example\UserManagement;
 use App\Http\Controllers\dashboard\Analytics;
 use App\Http\Controllers\dashboard\Crm;
+use App\Http\Controllers\dashboard\DashboardController;
 use App\Http\Controllers\language\LanguageController;
 use App\Http\Controllers\layouts\CollapsedMenu;
 use App\Http\Controllers\layouts\ContentNavbar;
@@ -159,8 +160,13 @@ use App\Http\Controllers\charts\ApexCharts;
 use App\Http\Controllers\charts\ChartJs;
 use App\Http\Controllers\maps\Leaflet;
 
+use App\Http\Controllers\permohonan\PermohonanPengabstrakanAirController;
+use App\Http\Controllers\permohonan\PermohonanBadanPerairanController;
+use App\Http\Controllers\permohonan\PermohonanPelepasanEfluenController;
+
+
+
 // Main Page Route
-Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
 Route::get('/dashboard/analytics', [Analytics::class, 'index'])->name('dashboard-analytics');
 Route::get('/dashboard/crm', [Crm::class, 'index'])->name('dashboard-crm');
 // locale
@@ -357,3 +363,23 @@ Route::get('/maps/leaflet', [Leaflet::class, 'index'])->name('maps-leaflet');
 // laravel example
 Route::get('/laravel/user-management', [UserManagement::class, 'UserManagement'])->name('laravel-example-user-management');
 Route::resource('/user-list', UserManagement::class);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    // PermohonanPengabstrakanAirController
+    Route::get('/permohonan/pengabstrakan-air', [PermohonanPengabstrakanAirController::class, 'index'])->name('permohonan-pengabstrakan-air');
+
+    // PermohonanBadanPerairanController
+    Route::get('/permohonan/badan-perairan', [PermohonanBadanPerairanController::class, 'index'])->name('permohonan-badan-perairan');
+
+    // PermohonanPelepasanEfluenController
+    Route::get('/permohonan/pelepasan-efluen', [PermohonanPelepasanEfluenController::class, 'index'])->name('permohonan-pelepasan-efluen');
+    Route::get('/permohonan/pelepasan-efluen/borang-individu', [PermohonanPelepasanEfluenController::class, 'create'])->name('permohonan-pelepasan-efluen-borang-individu');
+    Route::get('/permohonan/pelepasan-efluen/borang-bisnes', [PermohonanPelepasanEfluenController::class, 'create'])->name('permohonan-pelepasan-efluen-borang-bisnes');
+    Route::post('/permohonan/pelepasan-efluen', [PermohonanPelepasanEfluenController::class, 'store'])->name('permohonan-pelepasan-efluen-store');
+});
