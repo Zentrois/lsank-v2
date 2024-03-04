@@ -20,9 +20,9 @@ return new class extends Migration
             $table->integer('akaun'); //Individu atau bisnus
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('borang_id');
-            $table->unsignedBigInteger('payment_id');
-            $table->string('bill_id');
-            $table->string('invoice');
+            $table->unsignedBigInteger('payment_id')->nullable();
+            $table->string('bill_id')->nullable();
+            $table->string('invoice')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

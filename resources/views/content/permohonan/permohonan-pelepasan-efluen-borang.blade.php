@@ -112,17 +112,18 @@
             <div class="row g-3">
               <div class="col-sm-12">
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="permohonan" id="permohonan1" value="1" checked />
+                  <input class="form-check-input" type="radio" name="jenis-permohonan" id="permohonan1" value="1" checked />
                   <label class="form-check-label" for="permohonan1">Permohonan baru</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="permohonan" id="permohonan2" value="2" />
+                  <input class="form-check-input" type="radio" name="jenis-permohonan" id="permohonan2" value="2" />
                   <label class="form-check-label" for="permohonan2">Pembaharuan</label>
                 </div>
               </div>
+              <input type="text" name="nama-permohonan" value="3" hidden>
              
-              @if (url()->current() ==  route('permohonan-pelepasan-efluen-borang-individu'))
-
+              @if (url()->current() ==  route('permohonan-pelepasan-efluen-borang-individu'))    
+              <input type="text" name="akaun" value="1" hidden>
               <div class="col-sm-12">
                 <label class="form-label" for="nama-pemohon-borang-a">Nama pemohon</label>
                 <input type="text" name="nama-pemohon-borang-a" id="nama-pemohon-borang-a" class="form-control" value="{{ Auth::user()->name }}" readonly />
@@ -147,7 +148,8 @@
               </div>
 
               @elseif (url()->current() ==  route('permohonan-pelepasan-efluen-borang-bisnes') )
-                  
+              <input type="text" name="nama-permohonan" value="3" hidden>
+              <input type="text" name="akaun" value="1" hidden>
               <div class="col-sm-6">
                 <label class="form-label" for="tempat-perniagaan-utama-borang-a"> 
                   Tempat Perniagaan Utama</label>
@@ -325,29 +327,34 @@
               <h6 class="mb-0">5. Butiran Perunding Pensampelan</h6>
 
               <div class="col-sm-6">
-                <label class="form-label" for="nama-syarikat-perunding-borang-c">Nama syarikat</label>
+                <label class="form-label" for="nama-syarikat-perunding-persempalan-borang-c">Nama syarikat Perunding Pensampelan</label>
                 <input type="text" name="nama-syarikat-perunding-borang-c" id="nama-syarikat-perunding-borang-c" class="form-control"/>
               </div>
 
               <div class="col-sm-6">
-                <label class="form-label" for="no-syarikat-perunding-borang-c">No. pendaftaran syarikat
+                <label class="form-label" for="no-syarikat-perunding-persempalan-borang-c">No. pendaftaran syarikat Perunding Pensampelan
                 </label>
-                <input type="text" name="no-syarikat-perunding-borang-c" id="no-syarikat-perunding-borang-c" class="form-control"/>
+                <input type="text" name="no-syarikat-perunding-persempalan-borang-c" id="no-syarikat-perunding-persempalan-borang-c" class="form-control"/>
               </div>
 
               <div class="col-sm-12">
-                <label class="form-label" for="alamat-syarikat-perunding-borang-c">Alamat Syarikat</label>
-                <input type="text" name="alamat-syarikat-perunding-borang-c" id="alamat-syarikat-perunding-borang-c" class="form-control"/>
+                <label class="form-label" for="alamat-syarikat-perunding-persempalan-borang-c">Alamat Syarikat</label>
+                <input type="text" name="alamat-syarikat-perunding-persempalan-borang-c" id="alamat-syarikat-perunding-persempalan-borang-c" class="form-control"/>
               </div>
 
               <div class="col-sm-12">
                 <label class="form-label" for="nama-ahli-kimia-borang-c">Nama ahli kimia yang dilantik</label>
-                <input type="text" name="nama-ahli-borang-c" id="nama-ahli-borang-c" class="form-control"/>
+                <input type="text" name="nama-ahli-kimia-borang-c" id="nama-ahli-kimia-borang-c" class="form-control"/>
+              </div>
+
+              <div class="col-sm-12">
+                <label class="form-label" for="no-pendaftaran-ahli-kimia-borang-c">No Pendaftaran ahli kimia</label>
+                <input type="text" name="nama-pendaftaran-ahli-kimia-borang-c" id="nama-pendaftaran-ahli-kimia-borang-c" class="form-control"/>
               </div>
 
               <div class="col-sm-12">
                 <label class="form-label" for="alamat-ahli-kimia-borang-c">Alamat ahli kimia</label>
-                <input type="text" name="no-telefon-pegawai-borang-c" id="no-telefon-pegawai-borang-c" class="form-control"/>
+                <input type="text" name="alamat-ahli-kimia-borang-c" id="alamat-ahli-kimia-borang-c" class="form-control"/>
               </div>
 
               <div class="col-sm-6">
@@ -361,8 +368,8 @@
               </div>
 
               <div class="col-sm-6">
-                <label class="form-label" for="email-pegawai-borang-c">E-mel ahli kimia</label>
-                <input type="text" name="email-pegawai-borang-c" id="email-pegawai-borang-c" class="form-control"/>
+                <label class="form-label" for="email-ahli-kimia-borang-c">E-mel ahli kimia</label>
+                <input type="text" name="email-ahli-kimia-borang-c" id="email-ahli-kimia-borang-c" class="form-control"/>
               </div>
 
               <div class="col-sm-6">
@@ -401,13 +408,13 @@
               </div>
 
               <div class="col-sm-6">
-                <label class="form-label" for="no-telefon-pegawai-borang-d">Alamat</label>
-                <input type="text" name="no-telefon-pegawai-borang-d" id="no-telefon-pegawai-borang-d" class="form-control" placeholder="" aria-label="" />
+                <label class="form-label" for="no-alamat-syarikat-borang-d">Alamat</label>
+                <input type="text" name="no-alamat-syarikat-borang-d" id="no-alamat-pegawai-borang-d" class="form-control" placeholder="" aria-label="" />
               </div>
 
               <div class="col-sm-6">
-                <label class="form-label" for="no-telefon-pegawai-borang-d">No. telefon pegawai</label>
-                <input type="text" name="no-telefon-pegawai-borang-d" id="no-telefon-pegawai-borang-d" class="form-control" placeholder="" aria-label="" />
+                <label class="form-label" for="no-alamat-pegawai-borang-d">No. telefon pegawai</label>
+                <input type="text" name="no-alamat-pegawai-borang-d" id="no-alamat-pegawai-borang-d" class="form-control" placeholder="" aria-label="" />
               </div>
 
               <div class="col-sm-6">
@@ -484,7 +491,7 @@
               <div class="col-sm-6">
                 <label class="form-label" for="masa-ujian-kualiti-air-borang-d">Masa</label>
                 <input type="time" name="masa-ujian-kualiti-air-borang-d" id="masa-ujian-kualiti-air-borang-d" class="form-control" placeholder="" aria-label="Time" step="3600" />
-            </div>
+              </div>
 
               <div class="col-sm-6">
                 <label class="form-label" for="koordinat-borang-d">Lokasi pensampelan (koordinat jika ada)</label>
@@ -517,33 +524,33 @@
 
               <h6 class="mb-0">4. Butiran Ahli Kimia</h6>
               <div class="col-sm-6">
-                <label class="form-label" for="nama-syarikat-ahli-kimia-borang-d">Nama syarikat</label>
-                <input type="text" name="nama-syarikat-ahli-kimia-borang-d"" id="nama-syarikat-ahli-kimia-borang-d" class="form-control" placeholder="" aria-label="" />
+                <label class="form-label" for="nama-syarikat-persampelan-borang-d">Nama syarikat Persampelan</label>
+                <input type="text" name="nama-syarikat-persampelan-borang-d"" id="nama-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
               </div>
 
               <div class="col-sm-6">
-                <label class="form-label" for="no-syarikat-ahli-kimia-borang-d">No. pendaftaran syarikat</label>
-                <input type="text" name="no-syarikat-ahli-kimia-borang-d" id="no-syarikat-ahli-kimia-borang-d" class="form-control" placeholder="" aria-label="" />
+                <label class="form-label" for="no-syarikat-persampelan-borang-d">No. pendaftaran syarikat</label>
+                <input type="text" name="no-syarikat-persampelan-borang-d" id="no-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
               </div>
 
               <div class="col-sm-6">
-                <label class="form-label" for="alamat-syarikat-ahli-kimia-borang-d">Alamat</label>
-                <input type="text" name="alamat-syarikat-ahli-kimia-borang-d" id="alamat-syarikat-ahli-kimia-borang-d" class="form-control" placeholder="" aria-label="" />
+                <label class="form-label" for="alamat-syarikat-persampelan-borang-d">Alamat</label>
+                <input type="text" name="alamat-syarikat-persampelan-borang-d" id="alamat-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
               </div>
 
               <div class="col-sm-6">
                 <label class="form-label" for="no-tel-syarikat-ahli-kimia-borang-d">No.telefon,</label>
-                <input type="text" name="no-tel-syarikat-ahli-kimia-borang-d" id="no-tel-syarikat-ahli-kimia-borang-d" class="form-control" placeholder="" aria-label="" />
+                <input type="text" name="no-tel-syarikat-persampelan-borang-d" id="no-tel-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
               </div>
 
               <div class="col-sm-6">
                 <label class="form-label" for="no-faks-syarikat-borang-d">No. faks</label>
-                <input type="text" name="no-faks-syarikat-borang-d" id="no-faks-syarikat-borang-d" class="form-control" placeholder="" aria-label="" />
+                <input type="text" name="no-faks-syarikat-persampelan-borang-d" id="no-faks-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
               </div>
 
               <div class="col-sm-6">
-                <label class="form-label" for="emel-syarikat-borang-d">Emel</label>
-                <input type="text" name="emel-syarikat-borang-d" id="emel-syarikat-borang-d" class="form-control" placeholder="" aria-label="" />
+                <label class="form-label" for="emel-syarikat-persampelan-borang-d">Emel</label>
+                <input type="text" name="emel-syarikat-persampelan-borang-d" id="emel-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
               </div>
 
               <div class="col-12 d-flex justify-content-between">

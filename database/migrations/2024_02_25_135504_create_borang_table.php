@@ -14,16 +14,16 @@ return new class extends Migration
         Schema::create('borang', function (Blueprint $table) {
            
             $table->id();
-            $table->json('borang_a');
-            $table->json('borang_b');
-            $table->json('borang_c');
-            $table->json('borang_d');
-            $table->json('borang_e');
-            $table->json('borang_r');
-            $table->json('borang_g');
-            $table->json('borang_h');
-            $table->json('borang_i');
-            $table->json('file_upload');
+            $table->json('borang_a')->nullable();
+            $table->json('borang_b')->nullable();
+            $table->json('borang_c')->nullable();
+            $table->json('borang_d')->nullable();
+            $table->json('borang_e')->nullable();
+            $table->json('borang_r')->nullable();
+            $table->json('borang_g')->nullable();
+            $table->json('borang_h')->nullable();
+            $table->json('borang_i')->nullable();
+            $table->json('file_upload')->nullable();
             $table->timestamps();
 
            

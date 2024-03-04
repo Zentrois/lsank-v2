@@ -13,7 +13,9 @@ $configData = Helper::appClasses();
 
 <!-- Page Scripts -->
 @section('page-script')
-@vite(['resources/assets/js/pages-pricing.js'])
+@vite([
+        'resources/assets/js/permohonan/modal-permohonan-badan-perairan.js'
+])
 @endsection
 
 @section('content')
@@ -41,7 +43,7 @@ $configData = Helper::appClasses();
               <h3 class="card-title text-center text-capitalize mb-1">Individu</h3>
               <p class="text-center">Solution for big organizations</p>
 
-              <a href="{{ route('permohonan-pelepasan-efluen-borang-individu') }}" class="btn btn-label-primary d-grid w-100">Permohonan Individu</a>
+              <button type="button" class="btn btn-label-primary d-grid w-100" data-bs-toggle="modal" data-bs-target="#addNewCCModal1"> Permohonan Individu </button>
             </div>
           </div>
         </div>
@@ -57,7 +59,7 @@ $configData = Helper::appClasses();
               <h3 class="card-title text-center text-capitalize mb-1">Bisnes</h3>
               <p class="text-center">Solution for big organizations</p>
 
-              <a href="{{ route('permohonan-pelepasan-efluen-borang-bisnes') }}" class="btn btn-label-primary d-grid w-100">Permohonan Bisnes</a>
+              <button type="button" class="btn btn-label-primary d-grid w-100" data-bs-toggle="modal" data-bs-target="#addNewCCModal2"> Permohonan Bisnes </button>
             </div>
           </div>
         </div>
@@ -67,3 +69,6 @@ $configData = Helper::appClasses();
   <!--/ Pricing Plans -->
 </div>
 @endsection
+
+@include('_partials/_modals/modal-add-borang-badan-perairan-individu')
+@include('_partials/_modals/modal-add-borang-badan-perairan-bisnes')

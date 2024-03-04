@@ -376,6 +376,8 @@ Route::middleware([
 
     // PermohonanBadanPerairanController
     Route::get('/permohonan/badan-perairan', [PermohonanBadanPerairanController::class, 'index'])->name('permohonan-badan-perairan');
+    Route::post('/permohonan/badan-perairan/borang-individu', [PermohonanBadanPerairanController::class, 'create'])->name('permohonan-badan-perairan-borang-individu');
+    Route::post('/permohonan/badan-perairan/borang-bisnes', [PermohonanBadanPerairanController::class, 'create'])->name('permohonan-badan-perairan-borang-bisnes');
 
     // PermohonanPelepasanEfluenController
     Route::get('/permohonan/pelepasan-efluen', [PermohonanPelepasanEfluenController::class, 'index'])->name('permohonan-pelepasan-efluen');
