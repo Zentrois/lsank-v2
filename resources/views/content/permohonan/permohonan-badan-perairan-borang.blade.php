@@ -155,7 +155,7 @@
                   <label class="form-check-label" for="permohonan2">Pembaharuan</label>
                 </div>
               </div>
-              <input type="text" name="nama-permohonan" value="3" hidden>
+              <input type="text" name="nama-permohonan" value="2" hidden>
              
               @if (url()->current() ==  route('permohonan-badan-perairan-borang-individu'))    
               <input type="text" name="akaun" value="1" hidden>
@@ -447,162 +447,71 @@
             </div>
             <div class="row g-3">
 
-              <h6 class="mb-0">1. Butiran Pemohon</h6>
+              <div class="col-sm-12">
+                <label class="form-label col-sm-12" for="permohonan2">Bentuk binaan </label>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="jenis-permohonan" id="permohonan1" value="1" checked />
+                  <label class="form-check-label" for="permohonan1">kekal</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="jenis-permohonan" id="permohonan2" value="2" />
+                  <label class="form-check-label" for="permohonan2">sementara</label>
+                </div>
+              </div>
 
               <div class="col-sm-12">
-                <label class="form-label" for="nama-syarikat-borang-d">Nama syarikat</label>
+                <label class="form-label" for="nama-syarikat-borang-d">Jenis binaan</label>
                 <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
-              <div class="col-sm-6">
-                <label class="form-label" for="no-pendaftaran-syarikat-borang-d">Alamat Syarikat</label>
-                <input type="text" name="alamat-syarikat-borang-d" id="alamat-syarikat-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label" for="no-alamat-syarikat-borang-d">Alamat</label>
-                <input type="text" name="no-alamat-syarikat-borang-d" id="no-alamat-pegawai-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label" for="no-alamat-pegawai-borang-d">No. telefon pegawai</label>
-                <input type="text" name="no-alamat-pegawai-borang-d" id="no-alamat-pegawai-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label" for="no-faks-pegawai-borang-d">No. faks pegawai</label>
-                <input type="text" name="no-faks-pegawai-borang-d" id="no-faks-pegawai-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label" for="emel-pegawai-borang-d">E-mel pegawai</label>
-                <input type="text" name="emel-pegawai-borang-d" id="emel-pegawai-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label" for="no-kad-pengenal-pegawai-borang-d">No. kad pengenalan Pegawai</label>
-                <input type="text" name="no-kad-pengenal-pegawai-borang-d" id="no-kad-pengenal-pegawai-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-12">
-                <hr class=""/>
-              </div>
-
-              <h6 class="mb-0">2. Jenis Aktiviti</h6>
               <div class="col-sm-12">
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti1-borang-d" value="1" />
-                  <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti1-borang-d">Akuakultur air tawar dalam kolam atau sangkar</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti2-borang-d" value="2" />
-                  <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti2-borang-d">Akuakultur air laut dalam kolam</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti3-borang-d" value="3" />
-                  <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti3-borang-d">Pembangunan atau kerja tanah</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti4-borang-d" value="4" />
-                  <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti4-borang-d">Penternakan babi</label>
-                </div>
-      
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti5-borang-d" value="5" />
-                  <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti5-borang-d">Penternakan selain babi</label>
-                </div> 
-                
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti6-borang-d" value="6" />
-                  <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti6-borang-d">Haiwan kesayangan</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti7-borang-d" value="7" />
-                  <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti7-borang-d">Aktiviti kuari</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti8-borang-d" value="8" />
-                  <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti8-borang-d">Bengkel kenderaan/label</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti9-borang-d" value="9" />
-                  <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti9-borang-d">Aktiviti pertanian</label>
-                </div>
+                <label class="form-label" for="nama-syarikat-borang-d">Jenis bahan binaan</label>
+                <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
-              <div class="col-12">
-                <hr class="" />
+              <div class="col-sm-12">
+                <label class="form-label" for="nama-syarikat-borang-d">Keluasan binaan </label>
+                <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
-              <h6 class="mb-0">3. Butiran Ujian Kualiti Air</h6>
-              <div class="col-sm-6">
-                <label class="form-label" for="tarikh-ujian-kualiti-air-borang-d">Tarikh</label>
-                <input type="date" name="tarikh-ujian-kualiti-air-borang-d" id="tarikh-ujian-kualiti-air-borang-d" class="form-control" placeholder="" aria-label="" />
+              <div class="col-sm-12">
+                <label class="form-label" for="nama-syarikat-borang-d">Kawasan binaan </label>
+                <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
-              <div class="col-sm-6">
-                <label class="form-label" for="masa-ujian-kualiti-air-borang-d">Masa</label>
-                <input type="time" name="masa-ujian-kualiti-air-borang-d" id="masa-ujian-kualiti-air-borang-d" class="form-control" placeholder="" aria-label="Time" step="3600" />
+              <div class="col-sm-12">
+                <label class="form-label" for="nama-syarikat-borang-d">Koordinat</label>
+                <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
-              <div class="col-sm-6">
-                <label class="form-label" for="koordinat-borang-d">Lokasi pensampelan (koordinat jika ada)</label>
-                <input type="text" name="koordinat-borang-d" id="koordinat-borang-d" class="form-control" placeholder="" aria-label="" />
+              <div class="col-sm-12">
+                <label class="form-label" for="nama-syarikat-borang-d">Status pemilikan tanah</label>
+                <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
-              <div class="col-sm-6">
-                <label class="form-label" for="parameter-ujikaji-borang-d">Parameter yang diujikaji</label>
-                <input type="text" name="parameter-ujikaji-borang-d" id="parameter-ujikaji-borang-d" class="form-control" placeholder="" aria-label="" />
+              <div class="col-sm-12">
+                <label class="form-label" for="nama-syarikat-borang-d">Jenis kumbahan (jika ada)</label>
+                <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
-              <div class="col-sm-6">
-                <label class="form-label" for="kaedah-ujikaji-borang-d">Kaedah ujikaji</label>
-                <input type="text" name="kaedah-ujikaji-borang-d" id="kaedah-ujikaji-borang-d" class="form-control" placeholder="" aria-label="" />
+              <div class="col-sm-12">
+                <label class="form-label" for="nama-syarikat-borang-d">Cara pelupusan</label>
+                <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
-              <div class="col-sm-6">
-                <label class="form-label" for="keputusan-borang-d">Keputusan</label>
-                <input type="text" name="keputusan-borang-d" id="keputusan-borang-d" class="form-control" placeholder="" aria-label="" />
+              <div class="col-sm-12">
+                <label class="form-label" for="nama-syarikat-borang-d">Tahun dibina (jika binaan sudah siap)</label>
+                <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
-              <div class="col-sm-6">
-                <label class="form-label" for="pengesahan-borang-d">Pengesahan ahli kimia</label>
-                <input type="text" name="pengesahan-borang-d" id="pengesahan-borang-d" class="form-control" placeholder="" aria-label="" />
+              <div class="col-sm-12">
+                <label class="form-label" for="nama-syarikat-borang-d">Tarikh jangkaan siap (jika kerja-kerja binaan sedang dijalankan)</label>
+                <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
-              <div class="col-12">
-                <hr class="" />
-              </div>
-
-              <h6 class="mb-0">4. Butiran Ahli Kimia</h6>
-              <div class="col-sm-6">
-                <label class="form-label" for="nama-syarikat-persampelan-borang-d">Nama syarikat Persampelan</label>
-                <input type="text" name="nama-syarikat-persampelan-borang-d"" id="nama-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label" for="no-syarikat-persampelan-borang-d">No. pendaftaran syarikat</label>
-                <input type="text" name="no-syarikat-persampelan-borang-d" id="no-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label" for="alamat-syarikat-persampelan-borang-d">Alamat</label>
-                <input type="text" name="alamat-syarikat-persampelan-borang-d" id="alamat-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label" for="no-tel-syarikat-ahli-kimia-borang-d">No.telefon,</label>
-                <input type="text" name="no-tel-syarikat-persampelan-borang-d" id="no-tel-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label" for="no-faks-syarikat-borang-d">No. faks</label>
-                <input type="text" name="no-faks-syarikat-persampelan-borang-d" id="no-faks-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
-              </div>
-
-              <div class="col-sm-6">
-                <label class="form-label" for="emel-syarikat-persampelan-borang-d">Emel</label>
-                <input type="text" name="emel-syarikat-persampelan-borang-d" id="emel-syarikat-persampelan-borang-d" class="form-control" placeholder="" aria-label="" />
+              <div class="col-sm-12">
+                <label class="form-label" for="nama-syarikat-borang-d">Catatan</label>
+                <input type="text" name="nama-syarikat-borang-d" id="nama-syarikat-borang-d" class="form-control" placeholder="" />
               </div>
 
               <div class="col-12 d-flex justify-content-between">
