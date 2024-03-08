@@ -34,10 +34,10 @@
 
 @section('content')
 <h4 class="py-3 mb-4">
-  <span class="text-muted fw-light">Permohonan Pelepasan Efluen /</span> 
-  @if (url()->current() ==  route('permohonan-pelepasan-efluen-borang-individu')) 
+  <span class="text-muted fw-light">Permohonan Pelepasan Efluen /</span>
+  @if (url()->current() ==  route('permohonan-pelepasan-efluen-borang-individu'))
   Borang Individu
-  @elseif (url()->current() ==  route('permohonan-pelepasan-efluen-borang-bisnes')) 
+  @elseif (url()->current() ==  route('permohonan-pelepasan-efluen-borang-bisnes'))
   Borang Bisnes
   @endif
 </h4>
@@ -45,7 +45,7 @@
 
   <div class="col-12">
     <div class="bs-stepper vertical wizard-modern wizard-modern-vertical mt-2">
-      
+
       <div class="bs-stepper-header">
         <div class="step" data-target="#borang-a">
           <button type="button" class="step-trigger">
@@ -103,75 +103,141 @@
 
           <!-- START BORANG A -->
           <div id="borang-a" class="content">
+
             <div class="content-header mb-3">
               <h6 class="mb-0">Borang A</h6>
               <small>Permohonan Lesen Pelepesan Efluen</small>
             </div>
 
-           
             <div class="row g-3">
+
+              {{-- Jenis Permohonan (jenis-permohonan)--}}
               <div class="col-sm-12">
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="jenis-permohonan" id="permohonan1" value="1" checked />
                   <label class="form-check-label" for="permohonan1">Permohonan baru</label>
                 </div>
+
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="jenis-permohonan" id="permohonan2" value="2" />
                   <label class="form-check-label" for="permohonan2">Pembaharuan</label>
                 </div>
               </div>
+
+              {{-- Nama Permohonan - 3 = Pelepasan Efluen (nama-permohonan)--}}
               <input type="text" name="nama-permohonan" value="3" hidden>
-             
-              @if (url()->current() ==  route('permohonan-pelepasan-efluen-borang-individu'))    
-              <input type="text" name="akaun" value="1" hidden>
+
+              @if (url()->current() ==  route('permohonan-pelepasan-efluen-borang-individu'))
+
+                {{-- Akaun - 1 = Individu (akaun) --}}
+                <input type="text" name="akaun" value="1" hidden>
+
+                {{-- Nama Pemohon (nama-pemohon-borang-a) --}}
+                <div class="col-sm-12">
+                  <label class="form-label" for="nama-pemohon-borang-a">Nama pemohon</label>
+                  <input type="text" name="nama-pemohon-borang-a" id="nama-pemohon-borang-a" class="form-control" value="{{ Auth::user()->name }}" readonly />
+                </div>
+
+              @elseif (url()->current() ==  route('permohonan-pelepasan-efluen-borang-bisnes') )
+
+                {{-- Akaun - 2 = Bisnes (akaun) --}}
+                <input type="text" name="akaun" value="2" hidden>
+
+                {{-- Tempat Perniagaan Utama (tempat-perniagaan-utama-borang-a) --}}
+                <div class="col-sm-6">
+                  <label class="form-label" for="nama-syarikat-borang-a">
+                    Nama Syarikat</label>
+                  <input type="text" name="nama-syarikat-borang-a" id="nama-syarikat-borang-a" class="form-control"/>
+                </div>
+
+                {{-- No Syarikat (no-syarikat-borang-a) --}}
+                <div class="col-sm-6">
+                  <label class="form-label" for="no-syarikat-borang-a">
+                    No Syarikat</label>
+                  <input type="text" name="no-syarikat-borang-a" id="no-syarikat-borang-a" class="form-control"/>
+                </div>
+
+              @endif
+
+              {{-- Alamat Berdaftar (alamat-berdaftar-borang-a) --}}
               <div class="col-sm-12">
-                <label class="form-label" for="nama-pemohon-borang-a">Nama pemohon</label>
-                <input type="text" name="nama-pemohon-borang-a" id="nama-pemohon-borang-a" class="form-control" value="{{ Auth::user()->name }}" readonly />
-              </div>
-              <div class="col-sm-6">
                 <label class="form-label" for="alamat-berdaftar-borang-a">Alamat berdaftar</label>
                 <input type="text" name="alamat-berdaftar-borang-a" id="alamat-berdaftar-borang-a" class="form-control"/>
               </div>
+
+              {{-- No Telefon (no-telefon-borang-a) --}}
               <div class="col-sm-6">
-                <label class="form-label" for="email-pemohon-borang-a">E-mel Pemohon</label>
-                <input type="email" name="email-pemohon-borang-a" id="email-pemohon-borang-a" class="form-control" value="{{ Auth::user()->email }}" readonly/>
-              </div>
-              <div class="col-sm-6">
-                <label class="form-label" for="no-telefon-borang-a"> 
+                <label class="form-label" for="no-telefon-borang-a">
                   No. telefon</label>
                 <input type="text" name="no-telefon-borang-a" id="no-telefon-borang-a" class="form-control"/>
               </div>
+
+              {{-- No Faks (no-faks-borang-a) --}}
               <div class="col-sm-6">
-                <label class="form-label" for="no-telefon-borang-a"> 
+                <label class="form-label" for="no-faks-borang-a">
                   No. faks</label>
                 <input type="text" name="no-faks-borang-a" id="no-faks-borang-a" class="form-control"/>
               </div>
 
-              @elseif (url()->current() ==  route('permohonan-pelepasan-efluen-borang-bisnes') )
-              <input type="text" name="nama-permohonan" value="3" hidden>
-              <input type="text" name="akaun" value="1" hidden>
-              <div class="col-sm-6">
-                <label class="form-label" for="tempat-perniagaan-utama-borang-a"> 
-                  Tempat Perniagaan Utama</label>
-                <input type="text" name="tempat-perniagaan-utama-borang-a" id="tempat-perniagaan-utama-borang-a" class="form-control"/>
+              {{-- Emel (emel-borang-a) --}}
+              <div class="col-sm-12">
+                <label class="form-label" for="emel-borang-a">E-mel</label>
+                <input type="email" name="emel-borang-a" id="emel-borang-a" class="form-control" value="
+                @if(url()->current() ==  route('permohonan-pelepasan-efluen-borang-individu'))
+                {{ Auth::user()->email }}
+                @endif
+
+
+                " readonly/>
               </div>
 
+              <div class="col-12">
+                <hr class="" />
+              </div>
+
+              {{-- Nama Perniagaan Utama (nama-perniagaan-utama-borang-a) --}}
+              <div class="col-sm-12">
+                <label class="form-label" for="nama-perniagaan-utama-borang-a">Nama Perniagaan Utama</label>
+                <input type="email" name="nama-perniagaan-utama-borang-a" id="nama-perniagaan-utama-borang-a" class="form-control"/>
+              </div>
+
+              {{-- No Telefon Perniagaan (no-telefon-perniagaan-borang-a) --}}
               <div class="col-sm-6">
                 <label class="form-label" for="no-telefon-perniagaan-borang-a">No. Telefon Perniagaan</label>
                 <input type="text" name="no-telefon-perniagaan-borang-a" id="no-telefon-perniagaan-borang-a" class="form-control"/>
               </div>
 
+              {{-- No Faks Perniagaan (no-faks-perniagaan-borang-a) --}}
               <div class="col-sm-6">
-                <label class="form-label" for="no-faks-perniagaan-borang-a"> 
+                <label class="form-label" for="no-faks-perniagaan-borang-a">
                   No. faks Perniagaan</label>
                 <input type="text" name="no-faks-perniagaan-borang-a" id="no-faks-perniagaan-borang-a" class="form-control" />
               </div>
-              <div class="col-sm-6">
-                <label class="form-label" for="email-perniagaan-borang-a">E-mel Perniagaan</label>
-                <input type="text" name="email-perniagaan-borang-a" id="email-perniagaan-borang-a" class="form-control"  />
+
+              {{-- Emel Perniagaan (emel-perniagaan-borang-a) --}}
+              <div class="col-sm-12">
+                <label class="form-label" for="emel-perniagaan-borang-a">E-mel Perniagaan</label>
+                <input type="text" name="emel-perniagaan-borang-a" id="emel-perniagaan-borang-a" class="form-control"  />
               </div>
-              
-              @endif
+
+              {{-- Jenis kemudahan/perkhidmatan yang disediakan (jenis-perkhidmatan) --}}
+              <div class="col-sm-12">
+                <label class="form-label" for="jenis-perkhidmatan-borang-a">Jenis perkhidmatan yang disediakan</label>
+                <input type="text" name="jenis-perkhidmatan-borang-a" id="jenis-perkhidmatan" class="form-control"  />
+              </div>
+
+              {{-- Lokasi Perkhidmatan (lokasi-perkhidmatan) --}}
+              <div class="col-sm-12">
+                <label class="form-label" for="lokasi-perkhidmatan-borang-a">Lokasi Perkhidmatan</label>
+                <input type="text" name="lokasi-perkhidmatan-borang-a" id="lokasi-perkhidmatan-borang-a" class="form-control"  />
+              </div>
+
+              {{-- Kawasan yang dicadangkan dimana aktiviti dijalankan (lokasi-perkhidmatan) --}}
+              <div class="col-sm-12">
+                <label class="form-label" for="cadangan-kawasan-aktiviti-borang-a">Kawasan yang dicadangkan dimana aktiviti dijalankan</label>
+                <input type="text" name="cadangan-kawasan-aktiviti-borang-a" id="cadangan-kawasan-aktiviti-borang-a" class="form-control"  />
+              </div>
+
               <div class="col-12 d-flex justify-content-between">
                 <button class="btn btn-label-secondary btn-prev" disabled> <i class="ti ti-arrow-left me-sm-1 me-0"></i>
                   <span class="align-middle d-sm-inline-block d-none">Kembali</span>
@@ -179,6 +245,7 @@
                 <button class="btn btn-primary btn-next"> <span class="align-middle d-sm-inline-block d-none me-sm-1">Seterusnya</span> <i class="ti ti-arrow-right"></i></button>
               </div>
             </div>
+
           </div>
            <!-- END BORANG A -->
 
@@ -206,7 +273,7 @@
               <div class="col-12">
                 <hr class="" />
               </div>
-    
+
               <h6 class="mb-0">2. Fasa Aktiviti</h6>
               <div class="col-sm-12">
                 <div class="form-check form-check-inline">
@@ -241,12 +308,12 @@
                   <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-c[]" id="pelepasan-efluen-daripada-aktiviti4-borang-c" value="4" />
                   <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti4-borang-c">Penternakan babi</label>
                 </div>
-      
+
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti[]-borang-c" id="pelepasan-efluen-daripada-aktiviti5-borang-c" value="5" />
                   <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti5-borang-c">Penternakan selain babi</label>
-                </div> 
-                
+                </div>
+
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-c[]" id="pelepasan-efluen-daripada-aktiviti6-borang-c" value="6" />
                   <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti6-borang-c">Haiwan kesayangan</label>
@@ -454,12 +521,12 @@
                   <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti4-borang-d" value="4" />
                   <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti4-borang-d">Penternakan babi</label>
                 </div>
-      
+
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti5-borang-d" value="5" />
                   <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti5-borang-d">Penternakan selain babi</label>
-                </div> 
-                
+                </div>
+
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" name="pelepasan-efluen-daripada-aktiviti-borang-d[]" id="pelepasan-efluen-daripada-aktiviti6-borang-d" value="6" />
                   <label class="form-check-label" for="pelepasan-efluen-daripada-aktiviti6-borang-d">Haiwan kesayangan</label>
@@ -594,8 +661,8 @@
                 </label>
                 <input type="file" class="form-control" name="upload4-pelepasan-efluen" id="upload4-pelepasan-efluen" />
               </div>
-       
-         
+
+
               <div class="col-12 d-flex justify-content-between">
                 <button class="btn btn-label-secondary btn-prev"> <i class="ti ti-arrow-left me-sm-1 me-0"></i>
                   <span class="align-middle d-sm-inline-block d-none">Kembali</span>
@@ -623,7 +690,7 @@
                             {{ config('variables.templateName') }}
                           </span>
                         </div>
-                       
+
                         <p class="mb-2">Aras 1, Blok E, Wisma Darul Aman, Alor Setar,</p>
                         <p class="mb-2">05503 Alor Setar, Kedah</p>
                         <p class="mb-0">04-774 4650</p>
@@ -662,10 +729,10 @@
                       <tbody>
                         <tr>
                           <td class="text-nowrap">Permohonan Pelepasan Efluen</td>
-                          <td class="text-nowrap"> 
-                            @if (url()->current() ==  route('permohonan-pelepasan-efluen-borang-individu')) 
+                          <td class="text-nowrap">
+                            @if (url()->current() ==  route('permohonan-pelepasan-efluen-borang-individu'))
                             Permohonan Individu
-                            @elseif (url()->current() ==  route('permohonan-pelepasan-efluen-borang-bisnes')) 
+                            @elseif (url()->current() ==  route('permohonan-pelepasan-efluen-borang-bisnes'))
                             Permohonan Bisnes
                             @endif
                           </td>
@@ -686,7 +753,7 @@
                       </tbody>
                     </table>
                   </div>
-            
+
                   <div class="card-body mx-3">
                     <div class="row">
                       <div class="col-12">
@@ -706,11 +773,11 @@
             </div>
           </div>
            <!-- TAMAT PEMBAYARAN -->
-          
+
         </form>
       </div>
     </div>
   </div>
- 
+
 </div>
 @endsection

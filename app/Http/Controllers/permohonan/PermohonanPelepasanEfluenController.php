@@ -19,7 +19,7 @@ class PermohonanPelepasanEfluenController extends Controller
     public function store(Request $request){
 
         dd($request->all());
-       
+
         $data = new PermohonanPelepasanEfluenController();
 
         $jenis_permohonan = $request->input('jenis-permohonan') ?? '';
@@ -27,19 +27,69 @@ class PermohonanPelepasanEfluenController extends Controller
         $akaun = $request->input('akaun') ?? '';
 
         // Borang A
-        $nama_pemohon_borang_a = $request->input('nama-pemohon-borang-a') ?? '';
-        $alamat_berdaftar_borang_a = $request->input('alamat-berdaftar-borang-a') ?? '';
-        $email_pemohon_borang_a = $request->input('email-pemohon-borang-a') ?? '';
-        $no_telefon_borang_a = $request->input('no-telefon-borang-a') ?? '';
-        $no_faks_borang_a = $request->input('no-faks-borang-a') ?? '';
+        if($akaun == 1){
+          $nama_pemohon_borang_a = $request->input('nama-pemohon-borang-a') ?? '';
+          $alamat_berdaftar_borang_a = $request->input('alamat-berdaftar-borang-a') ?? '';
+          $no_telefon_borang_a = $request->input('no-telefon-borang-a') ?? '';
+          $no_faks_borang_a = $request->input('no-faks-borang-a') ?? '';
+          $emel_borang_a = $request->input('emel-borang-a') ?? '';
+          $nama_perniagaan_utama_borang_a = $request->input('nama-perniagaan-utama-borang-a') ?? '';
+          $no_telefon_perniagaan_borang_a = $request->input('no-telefon-perniagaan-borang-a') ?? '';
+          $no_faks_perniagaan_borang_a = $request->input('no-faks-perniagaan-borang-a') ?? '';
+          $emel_perniagaan_borang_a = $request->input('emel-perniagaan-borang-a') ?? '';
+          $jenis_perkhidmatan_borang_a = $request->input('jenis-perkhidmatan-borang-a') ?? '';
+          $lokasi_perkhidmatan_borang_a = $request->input('lokasi-perkhidmatan-borang-a') ?? '';
+          $cadangan_kawasan_aktiviti_borang_a = $request->input('cadangan-kawasan-aktiviti-borang-a') ?? '';
 
-        $borang_a = [
+          $borang_a = [
             'nama_pemohon_borang_a' => $nama_pemohon_borang_a,
             'alamat_berdaftar_borang_a' => $alamat_berdaftar_borang_a,
-            'email_pemohon_borang_a' => $email_pemohon_borang_a,
+            'emel_pemohon_borang_a' => $emel_pemohon_borang_a,
             'no_telefon_borang_a' => $no_telefon_borang_a,
             'no_faks_borang_a' => $no_faks_borang_a,
-        ];
+            'emel_borang_a' => $emel_borang_a,
+            'nama_perniagaan_utama_borang_a' => $nama_perniagaan_utama_borang_a,
+            'no_telefon_perniagaan_borang_a' => $no_telefon_perniagaan_borang_a,
+            'no_faks_perniagaan_borang_a' => $no_faks_perniagaan_borang_a,
+            'emel_perniagaan_borang_a' => $emel_perniagaan_borang_a,
+            'jenis_perkhidmatan_borang_a' => $jenis_perkhidmatan_borang_a,
+            'lokasi_perkhidmatan_borang_a' => $lokasi_perkhidmatan_borang_a,
+            'cadangan_kawasan_aktiviti_borang_a' => $cadangan_kawasan_aktiviti_borang_a,
+          ];
+        }
+
+        if($akaun == 2){
+          $nama_syarikat_borang_a = $request->input('nama-syarikat-borang-a') ?? '';
+          $no_syarikat_borang_a = $request->input('no-syarikat-borang-a') ?? '';
+          $alamat_berdaftar_borang_a = $request->input('alamat-berdaftar-borang-a') ?? '';
+          $no_telefon_borang_a = $request->input('no-telefon-borang-a') ?? '';
+          $no_faks_borang_a = $request->input('no-faks-borang-a') ?? '';
+          $emel_borang_a = $request->input('emel-borang-a') ?? '';
+          $nama_perniagaan_utama_borang_a = $request->input('nama-perniagaan-utama-borang-a') ?? '';
+          $no_telefon_perniagaan_borang_a = $request->input('no-telefon-perniagaan-borang-a') ?? '';
+          $no_faks_perniagaan_borang_a = $request->input('no-faks-perniagaan-borang-a') ?? '';
+          $emel_perniagaan_borang_a = $request->input('emel-perniagaan-borang-a') ?? '';
+          $jenis_perkhidmatan_borang_a = $request->input('jenis-perkhidmatan-borang-a') ?? '';
+          $lokasi_perkhidmatan_borang_a = $request->input('lokasi-perkhidmatan-borang-a') ?? '';
+          $cadangan_kawasan_aktiviti_borang_a = $request->input('cadangan-kawasan-aktiviti-borang-a') ?? '';
+
+          $borang_a = [
+            'nama_syarikat_borang_a' => $nama_syarikat_borang_a,
+            'no_syarikat_borang_a' => $no_syarikat_borang_a,
+            'alamat_berdaftar_borang_a' => $alamat_berdaftar_borang_a,
+            'emel_pemohon_borang_a' => $emel_pemohon_borang_a,
+            'no_telefon_borang_a' => $no_telefon_borang_a,
+            'no_faks_borang_a' => $no_faks_borang_a,
+            'emel_borang_a' => $emel_borang_a,
+            'nama_perniagaan_utama_borang_a' => $nama_perniagaan_utama_borang_a,
+            'no_telefon_perniagaan_borang_a' => $no_telefon_perniagaan_borang_a,
+            'no_faks_perniagaan_borang_a' => $no_faks_perniagaan_borang_a,
+            'emel_perniagaan_borang_a' => $emel_perniagaan_borang_a,
+            'jenis_perkhidmatan_borang_a' => $jenis_perkhidmatan_borang_a,
+            'lokasi_perkhidmatan_borang_a' => $lokasi_perkhidmatan_borang_a,
+            'cadangan_kawasan_aktiviti_borang_a' => $cadangan_kawasan_aktiviti_borang_a,
+          ];
+        }
 
         // Borang C
         $nama_pegawai_borang_c = $request->input('nama-pegawai-borang-c') ?? '';
@@ -141,21 +191,21 @@ class PermohonanPelepasanEfluenController extends Controller
             $fileName1 = time() . '_' . uniqid() . '.' . $extension1;
             $file1->storeAs('uploads', $fileName1);
         }
-        
+
         if ($request->hasFile('upload2-pelepasan-efluen')) {
             $file2 = $request->file('upload2-pelepasan-efluen');
             $extension2 = $file2->getClientOriginalExtension();
             $fileName2 = time() . '_' . uniqid() . '.' . $extension2;
             $file2->storeAs('uploads', $fileName2);
         }
-        
+
         if ($request->hasFile('upload3-pelepasan-efluen')) {
             $file3 = $request->file('upload3-pelepasan-efluen');
             $extension3 = $file3->getClientOriginalExtension();
             $fileName3 = time() . '_' . uniqid() . '.' . $extension3;
             $file3->storeAs('uploads', $fileName3);
         }
-        
+
         if ($request->hasFile('upload4-pelepasan-efluen')) {
             $file4 = $request->file('upload4-pelepasan-efluen');
             $extension4 = $file4->getClientOriginalExtension();
@@ -190,10 +240,10 @@ class PermohonanPelepasanEfluenController extends Controller
 
         $id =  $data->id;
 
-        
 
 
 
-         
+
+
     }
 }
